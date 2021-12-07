@@ -2,6 +2,7 @@ from copy import deepcopy
 
 
 def check_num(matrix: list, num: int, row: int, column: int):
+    """Checks if there is such a number horizontally and vertically in the matrix"""
 
     horizontal = matrix[row]
     vertical = [elem[column] for elem in matrix]
@@ -12,8 +13,9 @@ def check_num(matrix: list, num: int, row: int, column: int):
 
 
 class SudokuSolver:
+    """Create an instance by passing a 9x9 matrix as the only argument and start the method run"""
 
-    def __init__(self, matrix):
+    def __init__(self, matrix: list):
         self.matrix = deepcopy(matrix)
         self.empty_cell_cords = []
         for i in range(len(matrix)):
